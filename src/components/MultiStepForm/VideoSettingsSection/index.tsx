@@ -4,6 +4,7 @@ import { Separator } from "../../../components/ui/separator";
 import React, { Dispatch, SetStateAction, useState } from "react";
 import ImageCard from "./ImageCard";
 import NumberOfCreatorsInput from "./NumberOfCreatorsInput";
+import VideoDurationSelector from "./VideoDurationSelector";
 
 interface VideoSettingsSectionProps {
   stepCompleted?: boolean;
@@ -41,6 +42,7 @@ const VideoSettingsSection: React.FC<VideoSettingsSectionProps> = ({
             setNumberOfCreators as unknown as Dispatch<SetStateAction<number>>
           }
         />
+        <VideoDurationSelector />
       </div>
     </div>
   );
