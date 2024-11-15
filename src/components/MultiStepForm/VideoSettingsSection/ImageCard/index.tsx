@@ -14,10 +14,10 @@ const ImageCard: React.FC<ImageCardProps> = ({ isSelected, videoType }) => {
 
   return (
     <div
-      className={`flex flex-col max-w-[16rem] shadow-md  p-1 rounded-md relative`}
+      className={`w-full flex flex-col md:max-w-[16rem] shadow-md  p-1 rounded-md relative`}
     >
       <div
-        className={`border-2 ${
+        className={`w-full border-2 ${
           isSelected ? "border-secondary" : "border-gray-100"
         } rounded-md p-1`}
       >
@@ -29,6 +29,7 @@ const ImageCard: React.FC<ImageCardProps> = ({ isSelected, videoType }) => {
         <img
           src={imageUrl}
           alt={videoType === "honest-review" ? "honest-review" : "video-ad"}
+          className="w-full"
         />
       </div>
       {videoType === "video-ad" ? (

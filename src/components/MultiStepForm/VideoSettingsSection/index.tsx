@@ -1,8 +1,9 @@
 import { CircleCheck, CircleDot } from "lucide-react";
 import { Separator } from "../../../components/ui/separator";
 
-import React from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 import ImageCard from "./ImageCard";
+import NumberOfCreatorsInput from "./NumberOfCreatorsInput";
 
 interface VideoSettingsSectionProps {
   stepCompleted?: boolean;
@@ -11,6 +12,8 @@ interface VideoSettingsSectionProps {
 const VideoSettingsSection: React.FC<VideoSettingsSectionProps> = ({
   stepCompleted,
 }) => {
+  const [numberOfCreators, setNumberOfCreators] = useState<number[]>([2]);
+
   return (
     <div className="flex flex-col  bg-gray-100">
       <div className="flex items-center">
@@ -23,15 +26,21 @@ const VideoSettingsSection: React.FC<VideoSettingsSectionProps> = ({
           Video settings
         </h2>
       </div>
-      <div className="flex flex-col bg-white p-4 border-2 border-gray-200  rounded-md">
+      <div className="w-full flex flex-col bg-white p-4 border-2 border-gray-200  rounded-md">
         <span className="text-[.75rem] md:text-[.8rem] mb-2 font-bold text-gray-700">
           Select the type of video you want
         </span>
-        <div className="flex mb-4 gap-4">
+        <div className="w-full flex flex-col md:flex-row mb-4 gap-4">
           <ImageCard videoType="video-ad" />
           <ImageCard videoType="honest-review" isSelected />
         </div>
         <Separator />
+        <NumberOfCreatorsInput
+          value={numberOfCreators as unknown as number}
+          setValue={
+            setNumberOfCreators as unknown as Dispatch<SetStateAction<number>>
+          }
+        />
       </div>
     </div>
   );
