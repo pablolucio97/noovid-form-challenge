@@ -1,6 +1,9 @@
 import { Loader } from "lucide-react";
 import React from "react";
+import { v4 as uuidv4 } from "uuid";
+import { mockedProducts } from "../../mock";
 import { Button } from "../ui/button";
+import ProductSection from "./ProductSection";
 import VideoSettingsSection from "./VideoSettingsSection";
 interface MultiStepFormProps {
   isSaving?: boolean;
@@ -11,12 +14,23 @@ const MultiStepForm: React.FC<MultiStepFormProps> = ({
   isSaving,
   isLastStep,
 }) => {
-  const steps: React.ReactNode[] = [<VideoSettingsSection stepCompleted />];
+  const steps: { id: string; component: React.ReactNode }[] = [
+    {
+      id: uuidv4(),
+      component: <VideoSettingsSection stepCompleted />,
+    },
+    {
+      id: uuidv4(),
+      component: <ProductSection products={mockedProducts} stepCompleted />,
+    },
+  ];
 
   return (
     <div className="w-full max-w-[80rem] flex flex-col bg-gray-100 rounded-md p-4 shadow-md">
       {steps.map((step) => (
-        <div className="w-ful mb-4">{step}</div>
+        <div key={step.id} className="w-ful mb-4">
+          {step.component}
+        </div>
       ))}
 
       <div className="w-full bg-white py-4 px-6 rounded-md flex justify-between items-center">

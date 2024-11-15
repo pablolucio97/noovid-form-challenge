@@ -23,7 +23,7 @@ const VideoSettingsSection: React.FC<VideoSettingsSectionProps> = ({
     "Portrait",
   ];
   return (
-    <div className="flex flex-col  bg-gray-100">
+    <div className="flex flex-col bg-gray-100">
       <div className="flex items-center">
         {stepCompleted ? (
           <CircleCheck className="bg-success text-white rounded-[1rem] mt-[-.75rem] mr-2" />

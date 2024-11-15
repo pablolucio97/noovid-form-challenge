@@ -1,5 +1,6 @@
 import { Check, Timer } from "lucide-react";
 import React from "react";
+import { formatUSD } from "../../../../../lib/format";
 interface TimerCardProps {
   time: "30s" | "45s" | "60s";
   isSelected?: boolean;
@@ -10,16 +11,16 @@ const TimerCard: React.FC<TimerCardProps> = ({ time, isSelected }) => {
 
   switch (time) {
     case "30s":
-      cost = "$49";
+      cost = formatUSD(49);
       break;
     case "45s":
-      cost = "$99";
+      cost = formatUSD(99);
       break;
     case "60s":
-      cost = "$149";
+      cost = formatUSD(149);
       break;
     default:
-      cost = "$49";
+      cost = formatUSD(49);
   }
 
   return (
