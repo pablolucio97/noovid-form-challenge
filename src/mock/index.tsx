@@ -26,3 +26,56 @@ export const mockedProducts = [
     imageUrl: "https://placehold.co/360x360/0234ee/ffffff?text=Shoes",
   },
 ];
+
+export const genderOptions = [
+  {
+    id: uuidv4(),
+    label: "Male",
+  },
+  {
+    id: uuidv4(),
+    label: "Female",
+  },
+];
+
+export const ageOptions = [
+  {
+    id: uuidv4(),
+    label: "Between 18 and 29",
+  },
+  {
+    id: uuidv4(),
+    label: "Between 30 and 45",
+  },
+  {
+    id: uuidv4(),
+    label: "More than 45 years old",
+  },
+];
+
+export const segmentOptions = [
+  {
+    id: uuidv4(),
+    label: "Between 18 and 29",
+  },
+  {
+    id: uuidv4(),
+    label: "Between 30 and 45",
+  },
+  {
+    id: uuidv4(),
+    label: "More than 45 years old",
+  },
+  {
+    id: uuidv4(),
+    label: "Between 18 and 29",
+  },
+  {
+    id: uuidv4(),
+    label: "Between 30 and 45",
+  },
+  {
+    id: uuidv4(),
+    label: "More than 45 years old",
+  },
+];

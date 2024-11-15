@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from "uuid";
 import { mockedProducts } from "../../mock";
 import { Button } from "../ui/button";
 import ProductSection from "./ProductSection";
+import TaskDetailsSection from "./TaskDetailsSection";
 import VideoSettingsSection from "./VideoSettingsSection";
 interface MultiStepFormProps {
   isSaving?: boolean;
@@ -22,6 +23,10 @@ const MultiStepForm: React.FC<MultiStepFormProps> = ({
     {
       id: uuidv4(),
       component: <ProductSection products={mockedProducts} stepCompleted />,
+    },
+    {
+      id: uuidv4(),
+      component: <TaskDetailsSection stepCompleted />,
     },
   ];
 

@@ -38,7 +38,7 @@ const VideoSettingsSection: React.FC<VideoSettingsSectionProps> = ({
         <span className="text-[.75rem] md:text-[.8rem] mb-2 font-bold text-gray-700">
           Select the type of video you want
         </span>
-        <div className="w-full flex flex-col md:flex-row mb-4 gap-4">
+        <div className="w-full flex flex-col md:flex-row mb-6 gap-4">
           <ImageCard videoType="video-ad" />
           <ImageCard videoType="honest-review" isSelected />
         </div>
