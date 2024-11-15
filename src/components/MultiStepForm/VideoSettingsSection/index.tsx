@@ -4,7 +4,9 @@ import { Separator } from "../../../components/ui/separator";
 import React, { Dispatch, SetStateAction, useState } from "react";
 import ImageCard from "./ImageCard";
 import NumberOfCreatorsInput from "./NumberOfCreatorsInput";
-import VideoDurationSelector from "./VideoDurationSelector";
+import SelectorInput from "./SelectorInput";
+import AspectRatioCard from "./SelectorInput/AspectRatioCard";
+import TimerCard from "./SelectorInput/TimerCard";
 
 interface VideoSettingsSectionProps {
   stepCompleted?: boolean;
@@ -14,7 +16,12 @@ const VideoSettingsSection: React.FC<VideoSettingsSectionProps> = ({
   stepCompleted,
 }) => {
   const [numberOfCreators, setNumberOfCreators] = useState<number[]>([2]);
-
+  const timerOptions: Array<"30s" | "45s" | "60s"> = ["30s", "45s", "60s"];
+  const aspectRatioOptions: Array<"Any" | "Landscape" | "Portrait"> = [
+    "Any",
+    "Landscape",
+    "Portrait",
+  ];
   return (
     <div className="flex flex-col  bg-gray-100">
       <div className="flex items-center">
@@ -42,7 +49,24 @@ const VideoSettingsSection: React.FC<VideoSettingsSectionProps> = ({
             setNumberOfCreators as unknown as Dispatch<SetStateAction<number>>
           }
         />
-        <VideoDurationSelector />
+        <SelectorInput
+          title="Video duration"
+          subtitle="How long should the video be?"
+          children={timerOptions.map((timer) => (
+            <TimerCard key={timer} time={timer} isSelected={timer === "45s"} />
+          ))}
+        />
+        <SelectorInput
+          title="Aspect ratio"
+          subtitle="Select how this video should be recorded"
+          children={aspectRatioOptions.map((aspect) => (
+            <AspectRatioCard
+              key={aspect}
+              aspectRatio={aspect}
+              isSelected={aspect === "Portrait"}
+            />
+          ))}
+        />
       </div>
     </div>
   );

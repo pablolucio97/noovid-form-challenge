@@ -15,7 +15,7 @@ const NumberOfCreatorsInput: React.FC<NumberOfCreatorsInputProps> = ({
     value * dynamicSpacingReason - absoluteSpacingReason;
 
   return (
-    <div className="w-full flex items-center p-4">
+    <div className="w-full flex flex-col md:flex-row  md:items-center p-4">
       <div className="w-[40%] flex flex-col">
         <div className="flex mt-2">
           <span className="text-[.8rem] md:text-[1rem] font-bold">
@@ -23,11 +23,11 @@ const NumberOfCreatorsInput: React.FC<NumberOfCreatorsInputProps> = ({
           </span>
           <span className="ml-1 text-red-400">*</span>
         </div>
-        <p className="text-[.7rem] md:text-[.9rem] text-gray-700">
+        <p className="text-[.7rem] md:text-[.9rem] text-gray-700 mb-4">
           How many creators can participate?
         </p>
       </div>
-      <div className="w-full flex flex-col max-w-[16rem] ml-4 lg:ml-[-4rem] relative">
+      <div className="w-full flex flex-col max-w-[16rem] md:ml-4 lg:ml-[-4rem] relative">
         <Slider
           defaultValue={[value]}
           max={10}
